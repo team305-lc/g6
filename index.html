@@ -10,21 +10,8 @@
 </head>
 <body>
 
-  <!-- ヘッダー -->
-  <header class="site-header">
-    <div class="site-logo">
-      <img src="img/logo.png" alt="G6" class="logo-img">
-    </div>
-    <nav class="site-nav">
-      <a id="login-nav-btn" href="html/login.html"><button class="nav-btn ghost">ログイン</button></a>
-      <button id="logout-nav-btn" class="nav-btn ghost" style="display:none" onclick="logout()">ログアウト</button>
-      <a href="html/movie.html"><button class="nav-btn solid">試合動画</button></a>
-    </nav>
-  </header>
-
   <!-- ヒーロー -->
   <section class="hero">
-    <!-- スライドショー背景 -->
     <div class="hero-slides">
       <div class="hero-slide active" style="background-image:url('img/hero-4.jpg')"></div>
       <div class="hero-slide" style="background-image:url('img/hero-1.jpg')"></div>
@@ -45,36 +32,13 @@
         <a href="html/movie.html">
           <button class="btn btn-primary">🎬 試合動画を見る</button>
         </a>
-        <a id="login-hero-btn" href="html/login.html">
-          <button class="btn btn-outline">🔑 ログイン</button>
-        </a>
-        <button id="logout-hero-btn" class="btn btn-outline" style="display:none" onclick="logout()">🚪 ログアウト</button>
       </div>
     </div>
 
-    <!-- スライドインジケーター -->
     <div class="slide-dots" id="slide-dots"></div>
   </section>
 
+  <script src="js/layout.js"></script>
   <script src="js/slideshow.js"></script>
-  <script>
-    function logout() {
-      sessionStorage.removeItem('g6_auth');
-      window.location.reload();
-    }
-
-    if (sessionStorage.getItem('g6_auth')) {
-      document.getElementById('login-nav-btn').style.display  = 'none';
-      document.getElementById('login-hero-btn').style.display = 'none';
-      document.getElementById('logout-nav-btn').style.display  = '';
-      document.getElementById('logout-hero-btn').style.display = '';
-    }
-  </script>
-
-  <!-- フッター -->
-  <footer class="site-footer">
-    &copy; 2026 G6 Basketball Club. All rights reserved.
-  </footer>
-
 </body>
 </html>
