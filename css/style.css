@@ -265,6 +265,33 @@ img { display: block; max-width: 100%; }
   flex-direction: column;
 }
 
+/* 試合動画ページ専用 */
+body.movie-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--green-dark);
+}
+
+body.movie-page::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url('../img/movie-bg.jpg');
+  background-size: cover;
+  background-position: center 25%;
+  opacity: 0.18;
+  z-index: -1;
+}
+
+body.movie-page .page-body {
+  flex: 1;
+}
+
+body.movie-page .site-footer {
+  margin-top: auto;
+}
+
 .page-header {
   background: var(--green-dark);
   padding: 80px 24px 40px;
