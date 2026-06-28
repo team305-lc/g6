@@ -55,7 +55,18 @@ img { display: block; max-width: 100%; }
   letter-spacing: 0.05em;
 }
 
-.site-logo .ball-icon { font-size: 1.5rem; }
+.logo-img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
+.login-logo-img {
+  height: 80px;
+  width: auto;
+  object-fit: contain;
+  margin-bottom: 12px;
+}
 
 .site-nav { display: flex; gap: 8px; }
 
