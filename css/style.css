@@ -545,9 +545,69 @@ body.movie-page .site-footer {
   font-size: 0.8rem;
 }
 
+/* ===== Hamburger Menu ===== */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  z-index: 110;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--white);
+  border-radius: 2px;
+  transition: transform 0.25s, opacity 0.25s;
+}
+
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.mobile-menu {
+  display: none;
+  position: absolute;
+  top: 64px;
+  right: 0;
+  left: 0;
+  background: var(--green-dark);
+  flex-direction: column;
+  padding: 8px 0 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+
+.mobile-menu.open { display: flex; }
+
+.mobile-menu .menu-item {
+  display: block;
+  width: 100%;
+  padding: 14px 24px;
+  color: var(--white);
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: left;
+  background: none;
+  border: none;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.mobile-menu .menu-item:last-child { border-bottom: none; }
+.mobile-menu .menu-item:hover { background: rgba(255,255,255,0.08); }
+
 /* ===== Responsive ===== */
 @media (max-width: 600px) {
   .site-header { padding: 0 20px; }
+  .site-nav { display: none; }
+  .hamburger { display: flex; }
   .login-card { padding: 36px 24px; }
   .movie-grid { grid-template-columns: 1fr; }
 }
