@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>試合動画 | G6 HOME</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ヘッダー -->
+  <header class="site-header">
+    <div class="site-logo">
+      <span class="ball-icon">🏀</span>
+      <span>G6 HOME</span>
+    </div>
+    <nav class="site-nav">
+      <a href="../index.html"><button class="nav-btn ghost">トップ</button></a>
+<button class="nav-btn ghost" onclick="sessionStorage.removeItem('g6_auth'); window.location.href='login.html'">ログアウト</button>
+    </nav>
+  </header>
+
+  <!-- ページヘッダー -->
+  <div class="page-header">
+    <h1>🎬 試合動画</h1>
+  </div>
+
+  <!-- 動画グリッド -->
+  <div class="page-body">
+    <div id="movie-grid" class="movie-grid"></div>
+  </div>
+
+  <!-- 動画モーダル -->
+  <div id="modal-overlay" class="modal-overlay">
+    <div class="modal-inner">
+      <button id="modal-close" class="modal-close">✕</button>
+      <video id="modal-video" class="modal-video" controls playsinline></video>
+      <p id="modal-title" class="modal-title"></p>
+    </div>
+  </div>
+
+  <!-- フッター -->
+  <footer class="site-footer">
+    &copy; 2026 G6 HOME Basketball Club. All rights reserved.
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/movie.js"></script>
+</body>
+</html>

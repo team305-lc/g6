@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>G6 HOME | Basketball Club</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ヘッダー -->
+  <header class="site-header">
+    <div class="site-logo">
+      <span class="ball-icon">🏀</span>
+      <span>G6 HOME</span>
+    </div>
+    <nav class="site-nav">
+      <a id="login-nav-btn" href="html/login.html"><button class="nav-btn ghost">ログイン</button></a>
+      <button id="logout-nav-btn" class="nav-btn ghost" style="display:none" onclick="logout()">ログアウト</button>
+      <a href="html/movie.html"><button class="nav-btn solid">試合動画</button></a>
+    </nav>
+  </header>
+
+  <!-- ヒーロー -->
+  <section class="hero">
+    <!-- スライドショー背景 -->
+    <div class="hero-slides">
+      <div class="hero-slide active" style="background-image:url('img/hero-1.jpg')"></div>
+      <div class="hero-slide" style="background-image:url('img/hero-2.jpg')"></div>
+      <div class="hero-slide" style="background-image:url('img/hero-3.jpg')"></div>
+      <div class="hero-slide" style="background-image:url('img/hero-4.jpg')"></div>
+    </div>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge">🏆 Basketball Club</div>
+      <h1 class="hero-title">
+        PLAY HARD,<br>
+        <span>WIN TOGETHER</span>
+      </h1>
+      <p class="hero-sub">G6 HOME — チームの記録を、ここに。</p>
+
+      <div class="hero-btns">
+        <a href="html/movie.html">
+          <button class="btn btn-primary">🎬 試合動画を見る</button>
+        </a>
+        <a id="login-hero-btn" href="html/login.html">
+          <button class="btn btn-outline">🔑 ログイン</button>
+        </a>
+        <button id="logout-hero-btn" class="btn btn-outline" style="display:none" onclick="logout()">🚪 ログアウト</button>
+      </div>
+    </div>
+
+    <!-- スライドインジケーター -->
+    <div class="slide-dots" id="slide-dots"></div>
+  </section>
+
+  <script src="js/slideshow.js"></script>
+  <script>
+    function logout() {
+      sessionStorage.removeItem('g6_auth');
+      window.location.reload();
+    }
+
+    if (sessionStorage.getItem('g6_auth')) {
+      document.getElementById('login-nav-btn').style.display  = 'none';
+      document.getElementById('login-hero-btn').style.display = 'none';
+      document.getElementById('logout-nav-btn').style.display  = '';
+      document.getElementById('logout-hero-btn').style.display = '';
+    }
+  </script>
+
+  <!-- フッター -->
+  <footer class="site-footer">
+    &copy; 2026 G6 HOME Basketball Club. All rights reserved.
+  </footer>
+
+</body>
+</html>
