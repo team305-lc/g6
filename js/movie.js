@@ -1,5 +1,5 @@
 // ===== GitHub リポジトリ設定（GitHub Pages公開後に設定） =====
-const GITHUB_USER = '3.05';
+const GITHUB_USER = 'team305-lc';
 const GITHUB_REPO = 'g6';
 
 // ===== 環境判定 =====
