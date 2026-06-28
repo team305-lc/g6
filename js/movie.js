@@ -1,6 +1,6 @@
 // ===== GitHub リポジトリ設定（GitHub Pages公開後に設定） =====
-const GITHUB_USER = 'YOUR_USERNAME';
-const GITHUB_REPO = 'YOUR_REPO';
+const GITHUB_USER = '3.05';
+const GITHUB_REPO = 'g6';
 
 // ===== 環境判定 =====
 const IS_LOCAL = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
